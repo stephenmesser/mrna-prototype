@@ -1,0 +1,171 @@
+PLASMID pNeoantigenX-mRNA - COMPLETE SCHEMATIC DIAGRAMS
+================================================================================
+
+================================================================================
+LINEAR PLASMID MAP (5' to 3')
+================================================================================
+
+██████████████████████                                                          
+CMV_Promoter (0-712)
+
+                      █                                                         
+                      Kozak_Sequence (712-722)
+
+                      ██                                                        
+                      Signal_Peptide (722-788)
+
+                        ███                                                     
+                        Neoantigen_X (788-878)
+
+                           █                                                    
+                           Expression_Tags (878-929)
+
+                            ██████                                              
+                            BGH_polyA (929-1098)
+
+                                  ██████████████████████████                    
+                                  Ampicillin_Resistance (1098-1959)
+
+                                                            ██████████          
+                                                            ColE1_Origin (1959-2
+
+
+Scale: 1 character ≈ 32.2 bp
+Total length: 2251 bp
+
+================================================================================
+CIRCULAR PLASMID MAP
+================================================================================
+
+                 A ● ●●●● ●●● ●                   
+                  ●            ●                  
+                ●●              ●●                
+               ●                  ●               
+              ●                    ●              
+             ●                      ●             
+            ●                        ●            
+            ●                        ●            
+           ●                          ● C         
+          ●                            ●          
+                                                  
+          ●                            ●          
+          ●                            ●          
+          ●                            ●          
+                                                  
+          ●                             ●         
+          ●                            ●          
+          ●                            ●          
+          ●                            ●          
+                                                  
+        B ●                            ●          
+           ●                          ●           
+            ●                        ●            
+            ●                        ●            
+           E ●                      ●             
+              ●                    ●              
+               ●                  ●               
+             N  ●●              ●●                
+                  ●            ●                  
+                S  ● ●●●  ●●● ●   C               
+
+Legend:
+  C = CMV_Promoter
+  K = Kozak_Sequence
+  S = Signal_Peptide
+  N = Neoantigen_X
+  E = Expression_Tags
+  B = BGH_polyA
+  A = Ampicillin_Resistance
+  C = ColE1_Origin
+
+Total plasmid size: 2251 bp
+
+================================================================================
+FUNCTIONAL FLOW DIAGRAM
+================================================================================
+
+TRANSCRIPTION UNIT:
+┌─────────────┐    ┌──────────┐    ┌─────────────┐
+│ CMV Promoter│ -> │ Neoantigen│ -> │ BGH polyA  │
+│   (Strong)  │    │     X     │    │(Terminator)│
+└─────────────┘    └──────────┘    └─────────────┘
+
+TRANSLATION OPTIMIZATION:
+┌─────────────┐    ┌──────────────┐    ┌─────────────┐
+│Kozak Sequence│ -> │Signal Peptide│ -> │Neoantigen X │
+│ (Ribosome   │    │   (ER Target)│    │  (Optimized)│
+│  Binding)   │    │              │    │             │
+└─────────────┘    └──────────────┘    └─────────────┘
+                                             │
+                                             v
+                                    ┌─────────────┐
+                                    │Expression   │
+                                    │Tags (His+   │
+                                    │FLAG)        │
+                                    └─────────────┘
+
+PLASMID MAINTENANCE:
+┌─────────────┐              ┌─────────────┐
+│ColE1 Origin │              │ Ampicillin  │
+│(Replication)│              │ Resistance  │
+│             │              │ (Selection) │
+└─────────────┘              └─────────────┘
+
+mRNA VACCINE WORKFLOW:
+Plasmid -> In Vitro Transcription -> mRNA -> Delivery -> Expression
+   │              │                    │         │           │
+Template     T7/SP6 Polymerase    Capping   Formulation  Immunization
+
+
+================================================================================
+SEQUENCE FEATURES ANNOTATION
+================================================================================
+
+1. CMV_Promoter
+   Position: 0-712 (712 bp)
+   Type: promoter
+   Description: Cytomegalovirus immediate early promoter for high expression in mammalian cells
+   Sequence: TAGTTATTAATAGTAATCAATTACGGGGTCATTAGTTCATAGCCCATATATGGAGTTCCG...
+
+2. Kozak_Sequence
+   Position: 712-722 (10 bp)
+   Type: regulatory
+   Description: Kozak sequence for efficient translation initiation
+   Sequence: GCCACCATGG
+
+3. Signal_Peptide
+   Position: 722-788 (66 bp)
+   Type: signal
+   Description: tPA signal peptide for ER targeting and secretion
+   Sequence: ATGGACGCCATGAAACGGGGCCTGTGCTGCGTGCTGCTGCTGTGCGGCGCCGTGTTCGTG...
+
+4. Neoantigen_X
+   Position: 788-878 (90 bp)
+   Type: CDS
+   Description: Codon-optimized neoantigen X sequence: KTVNMRLGL
+   Sequence: ATGGGCAGCCTGGTGCTGGTGGCCGCCCTGAAAACCGTGAACATGCGGCTGGGCCTGGGC...
+
+5. Expression_Tags
+   Position: 878-929 (51 bp)
+   Type: tag
+   Description: His-tag and FLAG tag for purification and detection
+   Sequence: CACCACCACCACCACCACGGCGGCAGCGACTACAAAGACGACGACGACAAA
+
+6. BGH_polyA
+   Position: 929-1098 (169 bp)
+   Type: terminator
+   Description: BGH polyadenylation signal for mRNA stability
+   Sequence: CTCGAGAAATTTGTGATGCTATTGCTTTATTTGTAACCATTATAAGCTGCAATAAACAAG...
+
+7. Ampicillin_Resistance
+   Position: 1098-1959 (861 bp)
+   Type: selection
+   Description: Ampicillin resistance gene for plasmid selection
+   Sequence: ATGAGTATTCAACATTTCCGTGTCGCCCTTATTCCCTTTTTTGCGGCATTTTGCCTTCCT...
+
+8. ColE1_Origin
+   Position: 1959-2251 (292 bp)
+   Type: origin
+   Description: ColE1 origin of replication for bacterial propagation
+   Sequence: TTAATTAAGCGGCCGCCCTGTCAGGTTGGGGGATAAGTCCCCTCCCTCCCCTATAGATCC...
+
