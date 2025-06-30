@@ -1,0 +1,107 @@
+{
+  "plasmid_name": "pNeoX_T7",
+  "total_length": 1198,
+  "neoantigen": {
+    "name": "Neoantigen_X",
+    "amino_acid_sequence": "MKTVRQERLKSIVRILERSKEPVSGAQLAEELSVSRQVIVQDIAYLRSLGYNIVATPRGYVLAGG",
+    "description": "Synthetic neoantigen X designed for therapeutic mRNA vaccine",
+    "source_organism": "Synthetic"
+  },
+  "components": [
+    {
+      "name": "T7_promoter",
+      "sequence": "TAATACGACTCACTATAGGG",
+      "component_type": "promoter",
+      "description": "T7 promoter for high-level expression",
+      "start_pos": 0,
+      "end_pos": 20
+    },
+    {
+      "name": "kozak_start",
+      "sequence": "GCCACCATG",
+      "component_type": "translation_start",
+      "description": "Kozak sequence and start codon for optimal translation initiation",
+      "start_pos": 20,
+      "end_pos": 29
+    },
+    {
+      "name": "n_terminal_tags",
+      "sequence": "CATCACCATCACCATCACGACTACAAGGACGACGATGACAAG",
+      "component_type": "tag",
+      "description": "6xHis tag for purification; FLAG tag for detection",
+      "start_pos": 29,
+      "end_pos": 71
+    },
+    {
+      "name": "neoantigen_x_cds",
+      "sequence": "ATGAAGACCGTGCGCCAGGAGCGCCTGAAGAGCATCGTGCGCATCCTGGAGCGCAGCAAGGAGCCCGTGAGCGGCGCCCAGCTGGCCGAGGAGCTGAGCGTGAGCCGCCAGGTGATCGTGCAGGACATCGCCTACCTGCGCAGCCTGGGCTACAACATCGTGGCCACCCCCCGCGGCTACGTGCTGGCCGGCGGC",
+      "component_type": "coding_sequence",
+      "description": "Codon-optimized coding sequence for Neoantigen_X",
+      "start_pos": 71,
+      "end_pos": 266
+    },
+    {
+      "name": "stop_codon",
+      "sequence": "TAG",
+      "component_type": "translation_stop",
+      "description": "Stop codon for translation termination",
+      "start_pos": 266,
+      "end_pos": 269
+    },
+    {
+      "name": "polya_signal",
+      "sequence": "AATAAAAGATCTTTATTTTCATTAGATCTGTGTGTTGGTTTTTTGTGTG",
+      "component_type": "polya_signal",
+      "description": "Polyadenylation signal for mRNA stability",
+      "start_pos": 269,
+      "end_pos": 318
+    },
+    {
+      "name": "t7_terminator",
+      "sequence": "GCTAGTTATTGCTCAGCGG",
+      "component_type": "terminator",
+      "description": "T7 terminator for transcription termination",
+      "start_pos": 318,
+      "end_pos": 337
+    },
+    {
+      "name": "amp_resistance",
+      "sequence": "ATGAGTATTCAACATTTCCGTGTCGCCCTTATTCCCTTTTTTGCGGCATTTTGCCTTCCTGTTTTTGCTCACCCAGAAACGCTGGTGAAAGTAAAAGATGCTGAAGATCAGTTGGGTGCACGAGTGGGTTACATCGAACTGGATCTCAACAGCGGTAAGATCCTTGAGAGTTTTCGCCCCGAAGAACGTTTTCCAATGATGAGCACTTTTAAAGTTCTGCTATGTGGCGCGGTATTATCCCGTGTTGACGCCGGGCAAGAGCAACTCGGTCGCCGCATACACTATTCTCAGAATGACTTGGTTGAGTACTCACCAGTCACAGAAAAGCATCTTACGGATGGCATGACAGTAAGAGAATTATGCAGTGCTGCCATAACCATGAGTGATAACACTGCGGCCAACTTACTTCTGACAACGATCGGAGGACCGAAGGAGCTAACCGCTTTTTTGCACAACATGGGGGATCATGTAACTCGCCTTGATCGTTGGGAACCGGAGCTGAATGAAGCCATACCAAACGACGAGCGTGACACCACGATGCCTGTAGCAATGGCAACAACGTTGCGCAAACTATTAACTGGCGAACTACTTACTCTAGCTTCCCGGCAACAATTAATAGACTGGATGGAGGCGGATAAAGTTGCAGGACCACTTCTGCGCTCGGCCCTTCCGGCTGGCTGGTTTATTGCTGATAAATCTGGAGCCGGTGAGCGTGGGTCTCGCGGTATCATTGCAGCACTGGGGCCAGATGGTAAGCCCTCCCGTATCGTAGTTATCTACACGACGGGGAGTCAGGCAACTATGGATGAACGAAATAGACAGATCGCTGAGATAGGTGCCTCACTGATTAAGCATTGGTAA",
+      "component_type": "resistance_marker",
+      "description": "Ampicillin resistance gene for bacterial selection",
+      "start_pos": 337,
+      "end_pos": 1198
+    }
+  ],
+  "complete_sequence": "TAATACGACTCACTATAGGGGCCACCATGCATCACCATCACCATCACGACTACAAGGACGACGATGACAAGATGAAGACCGTGCGCCAGGAGCGCCTGAAGAGCATCGTGCGCATCCTGGAGCGCAGCAAGGAGCCCGTGAGCGGCGCCCAGCTGGCCGAGGAGCTGAGCGTGAGCCGCCAGGTGATCGTGCAGGACATCGCCTACCTGCGCAGCCTGGGCTACAACATCGTGGCCACCCCCCGCGGCTACGTGCTGGCCGGCGGCTAGAATAAAAGATCTTTATTTTCATTAGATCTGTGTGTTGGTTTTTTGTGTGGCTAGTTATTGCTCAGCGGATGAGTATTCAACATTTCCGTGTCGCCCTTATTCCCTTTTTTGCGGCATTTTGCCTTCCTGTTTTTGCTCACCCAGAAACGCTGGTGAAAGTAAAAGATGCTGAAGATCAGTTGGGTGCACGAGTGGGTTACATCGAACTGGATCTCAACAGCGGTAAGATCCTTGAGAGTTTTCGCCCCGAAGAACGTTTTCCAATGATGAGCACTTTTAAAGTTCTGCTATGTGGCGCGGTATTATCCCGTGTTGACGCCGGGCAAGAGCAACTCGGTCGCCGCATACACTATTCTCAGAATGACTTGGTTGAGTACTCACCAGTCACAGAAAAGCATCTTACGGATGGCATGACAGTAAGAGAATTATGCAGTGCTGCCATAACCATGAGTGATAACACTGCGGCCAACTTACTTCTGACAACGATCGGAGGACCGAAGGAGCTAACCGCTTTTTTGCACAACATGGGGGATCATGTAACTCGCCTTGATCGTTGGGAACCGGAGCTGAATGAAGCCATACCAAACGACGAGCGTGACACCACGATGCCTGTAGCAATGGCAACAACGTTGCGCAAACTATTAACTGGCGAACTACTTACTCTAGCTTCCCGGCAACAATTAATAGACTGGATGGAGGCGGATAAAGTTGCAGGACCACTTCTGCGCTCGGCCCTTCCGGCTGGCTGGTTTATTGCTGATAAATCTGGAGCCGGTGAGCGTGGGTCTCGCGGTATCATTGCAGCACTGGGGCCAGATGGTAAGCCCTCCCGTATCGTAGTTATCTACACGACGGGGAGTCAGGCAACTATGGATGAACGAAATAGACAGATCGCTGAGATAGGTGCCTCACTGATTAAGCATTGGTAA",
+  "design_rationale": {
+    "promoter_choice": "T7 promoter selected for in vitro transcription compatibility",
+    "codon_optimization": "Human codon usage optimized to maximize expression in mammalian systems",
+    "kozak_sequence": "Optimal Kozak sequence included for efficient translation initiation",
+    "tag_selection": "Tags included: 6xHis, FLAG for protein tracking and purification",
+    "polya_signal": "Polyadenylation signal included for mRNA stability and efficient translation",
+    "resistance_marker": "Ampicillin resistance for bacterial selection and plasmid maintenance",
+    "mRNA_compatibility": "Design optimized for in vitro transcription and mRNA vaccine applications"
+  },
+  "mRNA_compatibility": {
+    "t7_promoter_present": true,
+    "polya_signal_present": true,
+    "kozak_optimized": true,
+    "codon_optimized": true,
+    "gc_content_optimal": 51.66944908180301,
+    "predicted_issues": [
+      "Contains TTTT sequence (potential T7 termination)"
+    ]
+  },
+  "validation_results": {
+    "sequence_length": 1198,
+    "gc_content": 51.66944908180301,
+    "start_codons": 22,
+    "stop_codons": 56,
+    "potential_issues": [
+      "Multiple start codons detected (22)",
+      "Contains homopolymer runs that may cause synthesis issues"
+    ],
+    "validation_passed": false
+  }
+}
