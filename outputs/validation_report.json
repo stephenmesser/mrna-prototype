@@ -1,0 +1,74 @@
+{
+  "overall_status": "FAILED",
+  "timestamp": "",
+  "basic_validation": {
+    "passed": true,
+    "issues": [],
+    "warnings": [],
+    "total_length": 2571,
+    "element_count": 9,
+    "element_types": [
+      "promoter",
+      "tag",
+      "enhancer",
+      "resistance",
+      "gene",
+      "utr"
+    ]
+  },
+  "sequence_validation": {
+    "passed": false,
+    "issues": [
+      "Problematic sequences found: poly_A, poly_T, chi_site, direct_repeats"
+    ],
+    "warnings": [
+      "Restriction sites found: XhoI (CTCGAG)"
+    ],
+    "gc_content": 50.76,
+    "restriction_sites": [
+      "XhoI (CTCGAG)"
+    ],
+    "sequence_length": 2571
+  },
+  "mrna_validation": {
+    "passed": true,
+    "issues": [],
+    "warnings": [],
+    "mrna_length": 712,
+    "has_t7_promoter": true,
+    "has_kozak_sequence": true
+  },
+  "expression_validation": {
+    "passed": true,
+    "issues": [],
+    "warnings": [
+      "Low codon optimization score: 0.436"
+    ],
+    "codon_optimization_score": 0.436,
+    "promoter_count": 1,
+    "tag_count": 2
+  },
+  "safety_validation": {
+    "passed": true,
+    "issues": [],
+    "warnings": [
+      "Contains antibiotic resistance genes - ensure proper containment",
+      "No origin of replication found - may affect plasmid maintenance"
+    ],
+    "resistance_markers": 1,
+    "origin_count": 0,
+    "biosafety_level": "BSL-1"
+  },
+  "optimization_validation": {
+    "passed": true,
+    "issues": [],
+    "warnings": [],
+    "complexity_score": 0.857,
+    "manufacturing_suitability": "High"
+  },
+  "recommendations": [
+    "Consider further codon optimization for higher expression",
+    "Follow biosafety protocols for antibiotic resistance genes",
+    "Consider removing restriction sites if they interfere with cloning"
+  ]
+}

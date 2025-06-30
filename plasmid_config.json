@@ -1,0 +1,64 @@
+{
+  "plasmid_config": {
+    "name": "neoantigen_x_mrna_vector",
+    "version": "1.0",
+    "description": "Optimized plasmid vector for neoantigen X expression in mRNA vaccines"
+  },
+  "neoantigen_x": {
+    "name": "Neoantigen X",
+    "protein_sequence": "MQLVESGGGLVKPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS",
+    "description": "Example neoantigen sequence for immunogenic response",
+    "molecular_weight": 12500,
+    "optimize_codons": true
+  },
+  "design_parameters": {
+    "target_expression_system": "mammalian",
+    "include_purification_tags": true,
+    "include_detection_tags": true,
+    "mrna_compatible": true,
+    "high_expression": true
+  },
+  "regulatory_elements": {
+    "preferred_promoter": "t7_promoter",
+    "translation_enhancer": "kozak_sequence",
+    "polyadenylation_signal": "bgh_polya",
+    "selection_marker": "amp_resistance"
+  },
+  "tags_and_markers": {
+    "n_terminal_tag": "flag_tag",
+    "c_terminal_tag": "his_tag",
+    "detection_method": "immunofluorescence",
+    "purification_method": "nickel_affinity"
+  },
+  "validation_criteria": {
+    "min_total_length": 1000,
+    "max_total_length": 10000,
+    "required_elements": [
+      "promoter",
+      "gene",
+      "tag"
+    ],
+    "mrna_requirements": {
+      "has_start_codon": true,
+      "has_stop_codon": true,
+      "has_polya_signal": true
+    }
+  },
+  "codon_optimization": {
+    "target_organism": "Homo sapiens",
+    "avoid_restriction_sites": [
+      "EcoRI",
+      "BamHI",
+      "HindIII",
+      "XhoI"
+    ],
+    "gc_content_range": [40, 60],
+    "avoid_secondary_structures": true
+  },
+  "quality_control": {
+    "check_frame": true,
+    "validate_translation": true,
+    "check_illegal_sequences": true,
+    "verify_promoter_orientation": true
+  }
+}

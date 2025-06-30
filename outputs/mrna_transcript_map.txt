@@ -1,0 +1,23 @@
+mRNA TRANSCRIPT MAP
+==================================================
+
+5' → 3' Direction:
+
+   0 bp • T7 Promoter (20 bp)
+  20 bp • Kozak Sequence (6 bp)
+  26 bp → Start Codon (3 bp)
+  29 bp • FLAG Tag (66 bp)
+  95 bp → Neoantigen X (360 bp)
+ 455 bp • 6xHis Tag (18 bp)
+ 473 bp → Stop Codon (3 bp)
+ 476 bp • BGH polyA (236 bp)
+
+Total mRNA length: 712 bp
+
+PROTEIN CODING REGION:
+------------------------------
+  START → Start Codon
+    TAG → FLAG Tag
+    CODING → Neoantigen X
+    TAG → 6xHis Tag
+  STOP → Stop Codon

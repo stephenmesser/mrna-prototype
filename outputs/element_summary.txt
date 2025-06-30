@@ -1,0 +1,65 @@
+ELEMENT SUMMARY
+==================================================
+
+PROMOTER ELEMENTS:
+------------------------------
+  • T7 Promoter
+    Position: 0-20 bp
+    Length: 20 bp
+    Description: T7 RNA polymerase promoter for in vitro transcription
+
+
+ENHANCER ELEMENTS:
+------------------------------
+  • Kozak Sequence
+    Position: 20-26 bp
+    Length: 6 bp
+    Description: Kozak consensus sequence for enhanced translation initiation
+
+
+GENE ELEMENTS:
+------------------------------
+  • Start Codon
+    Position: 26-29 bp
+    Length: 3 bp
+    Description: Translation start codon
+
+  • Neoantigen X
+    Position: 95-455 bp
+    Length: 360 bp
+    Description: Codon-optimized neoantigen X (optimization score: 0.436)
+
+  • Stop Codon
+    Position: 473-476 bp
+    Length: 3 bp
+    Description: Translation stop codon
+
+
+TAG ELEMENTS:
+------------------------------
+  • FLAG Tag
+    Position: 29-95 bp
+    Length: 66 bp
+    Description: FLAG epitope tag for detection and purification
+
+  • 6xHis Tag
+    Position: 455-473 bp
+    Length: 18 bp
+    Description: Hexahistidine tag for protein purification
+
+
+UTR ELEMENTS:
+------------------------------
+  • BGH polyA
+    Position: 476-712 bp
+    Length: 236 bp
+    Description: BGH polyadenylation signal for mRNA stability
+
+
+RESISTANCE ELEMENTS:
+------------------------------
+  • Ampicillin Resistance
+    Position: 712-2571 bp
+    Length: 1859 bp
+    Description: Ampicillin resistance gene for selection
+

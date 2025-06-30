@@ -1,0 +1,88 @@
+================================================================================
+PLASMID VECTOR: NEOANTIGEN_X_MRNA_VECTOR
+Total Length: 2571 bp
+================================================================================
+
+LINEAR MAP:
+------------------------------------------------------------
+    0 bp |█| T7 Promoter
+            Type: promoter
+            Length: 20 bp
+            Desc: T7 RNA polymerase promoter for in vitro ...
+
+   20 bp |█| Kozak Sequence
+            Type: enhancer
+            Length: 6 bp
+            Desc: Kozak consensus sequence for enhanced tr...
+
+   26 bp |█| Start Codon
+            Type: gene
+            Length: 3 bp
+            Desc: Translation start codon...
+
+   29 bp |█| FLAG Tag
+            Type: tag
+            Length: 66 bp
+            Desc: FLAG epitope tag for detection and purif...
+
+   95 bp |███████| Neoantigen X
+                  Type: gene
+                  Length: 360 bp
+                  Desc: Codon-optimized neoantigen X (optimizati...
+
+  455 bp |█| 6xHis Tag
+            Type: tag
+            Length: 18 bp
+            Desc: Hexahistidine tag for protein purificati...
+
+  473 bp |█| Stop Codon
+            Type: gene
+            Length: 3 bp
+            Desc: Translation stop codon...
+
+  476 bp |████| BGH polyA
+               Type: utr
+               Length: 236 bp
+               Desc: BGH polyadenylation signal for mRNA stab...
+
+  712 bp |████████████████████████████████████| Ampicillin Resistance
+                                               Type: resistance
+                                               Length: 1859 bp
+                                               Desc: Ampicillin resistance gene for selection...
+
+------------------------------------------------------------
+
+CIRCULAR MAP (Simplified):
+
+       Ampicill ●●●● ●●● ●              
+             ●            ●             
+           ●●              ●●           
+          ●                  ●          
+         ●                    ●         
+        ●                      ●        
+       ●                        ●       
+       ●                        ●       
+      ●                          ●      
+     ●                            ●     
+                                        
+     ●                            ●     
+     ●                            ●     
+     ●                            ●     
+                                        
+     ●                             ●    
+     ●                            ●     
+     ●                            ●     
+     ●                            ●     
+                                        
+     ●                            ●     
+      ●                          ●      
+       ●                        ●       
+       ●                        ●       
+        ●                      ●        
+         ●                    ●         
+          ●                  ●          
+           ●●              ●●           
+             ●            ●             
+              ● ●●●  ●●● ●              
+
+================================================================================

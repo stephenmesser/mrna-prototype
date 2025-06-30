@@ -1,0 +1,42 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+<style>
+text { font-family: Arial, sans-serif; font-size: 10px; }
+.title { font-size: 16px; font-weight: bold; }
+</style>
+<text x="200" y="30" text-anchor="middle" class="title">neoantigen_x_mrna_vector</text>
+<text x="200" y="50" text-anchor="middle">Total: 2571 bp</text>
+<circle cx="200" cy="200" r="150" fill="none" stroke="black" stroke-width="2"/>
+<path d="M 200.0 50.0 A 150 150 0 0 1 207.32868594440941 50.179139094957094" stroke="#FF6B6B" stroke-width="8" fill="none"/>
+<text x="204.1541625085609" y="30.050763656165657" text-anchor="middle">T7 Promote</text>
+<path d="M 207.32868594440941 50.179139094957094 A 150 150 0 0 1 209.5246740495078 50.30270348382831" stroke="#FFA07A" stroke-width="8" fill="none"/>
+<text x="209.55049400986147" y="30.268482407751975" text-anchor="middle">Kozak Sequ</text>
+<path d="M 209.5246740495078 50.30270348382831 A 150 150 0 0 1 210.6219296476554 50.376557282756465" stroke="#4ECDC4" stroke-width="8" fill="none"/>
+<text x="211.41648546961778" y="30.383774775164852" text-anchor="middle">Start Codo</text>
+<path d="M 210.6219296476554 50.376557282756465 A 150 150 0 0 1 234.51310906466676 54.024504444443096" stroke="#45B7D1" stroke-width="8" fill="none"/>
+<text x="225.65992335224013" y="31.947721427059605" text-anchor="middle">FLAG Tag</text>
+<path d="M 234.51310906466676 54.024504444443096 A 150 150 0 0 1 334.4852791848434 133.56424394518623" stroke="#4ECDC4" stroke-width="8" fill="none"/>
+<text x="305.8423898378828" y="66.96846797316945" text-anchor="middle">Neoantigen</text>
+<path d="M 334.4852791848434 133.56424394518623 A 150 150 0 0 1 337.27672157152176 139.54256278525457" stroke="#45B7D1" stroke-width="8" fill="none"/>
+<text x="354.0357246676996" y="128.07646055638924" text-anchor="middle">6xHis Tag</text>
+<path d="M 337.27672157152176 139.54256278525457 A 150 150 0 0 1 337.71627817492094 140.55063729822004" stroke="#4ECDC4" stroke-width="8" fill="none"/>
+<text x="355.8304135547136" y="132.05235683729018" text-anchor="middle">Stop Codon</text>
+<path d="M 337.71627817492094 140.55063729822004 A 150 150 0 0 1 347.8570127566571 225.26467452150814" stroke="#98D8C8" stroke-width="8" fill="none"/>
+<text x="368.7949363389078" y="179.79432093830894" text-anchor="middle">BGH polyA</text>
+<path d="M 347.8570127566571 225.26467452150814 A 150 150 0 1 1 199.99999999999997 50.0" stroke="#BB8FCE" stroke-width="8" fill="none"/>
+<text x="70.06220598979442" y="309.6182908449196" text-anchor="middle">Ampicillin</text>
+<text x="20" y="290" class="title">Legend:</text>
+<rect x="20" y="300" width="12" height="12" fill="#FF6B6B"/>
+<text x="40" y="310">Promoter</text>
+<rect x="20" y="315" width="12" height="12" fill="#4ECDC4"/>
+<text x="40" y="325">Gene</text>
+<rect x="20" y="330" width="12" height="12" fill="#45B7D1"/>
+<text x="40" y="340">Tag</text>
+<rect x="20" y="345" width="12" height="12" fill="#FFA07A"/>
+<text x="40" y="355">Enhancer</text>
+<rect x="20" y="360" width="12" height="12" fill="#98D8C8"/>
+<text x="40" y="370">Utr</text>
+<rect x="20" y="375" width="12" height="12" fill="#F7DC6F"/>
+<text x="40" y="385">Origin</text>
+<rect x="20" y="390" width="12" height="12" fill="#BB8FCE"/>
+<text x="40" y="400">Resistance</text>
+</svg>
