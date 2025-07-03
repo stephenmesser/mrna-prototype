@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test suite for the plasmid design system.
+Test suite for the plasmid design system and task list generator.
 """
 
 import sys
@@ -136,7 +136,18 @@ def run_all_tests():
             print(f"Error: {e}")
             return False
     
-    print("\n🎉 All tests passed! Plasmid design system is working correctly.")
+    print("\n🎉 All plasmid design tests passed!")
+    
+    # Run task list generator tests if available
+    try:
+        from test_task_list_generator import run_all_tests as run_task_tests
+        print("\nRunning task list generator tests...")
+        task_success = run_task_tests()
+        if not task_success:
+            return False
+    except ImportError:
+        print("Task list generator tests not available")
+    
     return True
 
 
