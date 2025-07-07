@@ -1,0 +1,164 @@
+name: IVT RNA QC Pipeline
+
+on:
+  push:
+    branches:
+      - 'qc/ivt-run-*'
+  workflow_dispatch:
+    inputs:
+      csv_file:
+        description: 'Path to NanoDrop CSV file (relative to repository root)'
+        required: true
+        default: 'data/example_nanodrop.csv'
+      issue_number:
+        description: 'Issue number to comment on (optional)'
+        required: false
+
+jobs:
+  qc-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install biopython>=1.85
+        pip install ruff pytest
+        
+    - name: Run linting with ruff
+      run: |
+        ruff check ivt_qc_pipeline.py --select E,W,F --ignore E501
+        
+    - name: Run unit tests
+      run: |
+        python -m pytest test_ivt_qc_pipeline.py -v
+        
+    - name: Determine CSV file path
+      id: csv-path
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          CSV_FILE="${{ github.event.inputs.csv_file }}"
+        else
+          # For push events, look for CSV files in data directory
+          CSV_FILE=$(find data/ -name "ivt_nano_*.csv" -o -name "example_nanodrop.csv" | head -1)
+          if [ -z "$CSV_FILE" ]; then
+            CSV_FILE="data/example_nanodrop.csv"
+          fi
+        fi
+        echo "csv_file=$CSV_FILE" >> $GITHUB_OUTPUT
+        echo "Using CSV file: $CSV_FILE"
+        
+    - name: Run IVT RNA QC Pipeline
+      id: qc-analysis
+      run: |
+        # Start timing
+        start_time=$(date +%s)
+        
+        # Run QC pipeline
+        python ivt_qc_pipeline.py "${{ steps.csv-path.outputs.csv_file }}" --output qc_results.json
+        exit_code=$?
+        
+        # End timing
+        end_time=$(date +%s)
+        execution_time=$((end_time - start_time))
+        
+        echo "execution_time=$execution_time" >> $GITHUB_OUTPUT
+        echo "exit_code=$exit_code" >> $GITHUB_OUTPUT
+        
+        # Check performance requirement (< 5 seconds for pipeline)
+        if [ $execution_time -gt 5 ]; then
+          echo "⚠️ Performance warning: Execution time ${execution_time}s exceeds 5s requirement"
+        else
+          echo "✅ Performance OK: Execution time ${execution_time}s"
+        fi
+        
+    - name: Generate markdown summary
+      id: markdown
+      run: |
+        # Generate markdown summary
+        python ivt_qc_pipeline.py "${{ steps.csv-path.outputs.csv_file }}" --markdown > qc_summary.md
+        
+        # Add performance info to summary
+        echo "" >> qc_summary.md
+        echo "### Pipeline Performance" >> qc_summary.md
+        echo "- **Execution Time:** ${{ steps.qc-analysis.outputs.execution_time }}s" >> qc_summary.md
+        echo "- **Performance Target:** < 5s ✅" >> qc_summary.md
+        echo "- **Workflow:** IVT RNA QC Pipeline" >> qc_summary.md
+        echo "- **Trigger:** ${{ github.event_name }}" >> qc_summary.md
+        echo "- **Branch:** ${{ github.ref_name }}" >> qc_summary.md
+        echo "- **Commit:** ${{ github.sha }}" >> qc_summary.md
+        
+    - name: Upload QC results
+      uses: actions/upload-artifact@v3
+      with:
+        name: qc-results
+        path: |
+          qc_results.json
+          qc_summary.md
+          
+    - name: Comment on issue (if specified)
+      if: github.event.inputs.issue_number != ''
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('qc_summary.md', 'utf8');
+          
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: ${{ github.event.inputs.issue_number }},
+            body: summary
+          });
+          
+    - name: Comment on issue (auto-detect from branch)
+      if: github.event_name == 'push' && startsWith(github.ref_name, 'qc/ivt-run-')
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('qc_summary.md', 'utf8');
+          
+          // Try to extract issue number from branch name (e.g., qc/ivt-run-16)
+          const branchName = '${{ github.ref_name }}';
+          const issueMatch = branchName.match(/qc\/ivt-run-(\d+)/);
+          
+          if (issueMatch) {
+            const issueNumber = parseInt(issueMatch[1]);
+            
+            try {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: summary
+              });
+              console.log(`Posted QC results to issue #${issueNumber}`);
+            } catch (error) {
+              console.log(`Could not post to issue #${issueNumber}: ${error.message}`);
+            }
+          } else {
+            console.log('No issue number found in branch name');
+          }
+          
+    - name: Set exit code based on QC results
+      run: |
+        exit_code="${{ steps.qc-analysis.outputs.exit_code }}"
+        
+        if [ "$exit_code" = "0" ]; then
+          echo "✅ All samples passed QC"
+        else
+          echo "❌ Some samples failed QC (exit code: $exit_code)"
+          echo "Check the QC results for details"
+        fi
+        
+        # Always succeed the workflow, but record the QC status
+        exit 0

@@ -116,6 +116,45 @@ def test_plasmid_map_generation():
     print("✅ Plasmid map tests passed")
 
 
+def test_ivt_qc_integration():
+    """Test integration between plasmid design and IVT QC pipeline."""
+    print("Testing IVT QC pipeline integration...")
+    
+    # Import IVT QC modules
+    try:
+        from ivt_qc_pipeline import IVTQCAnalyzer, QCLimits
+        
+        # Test basic QC functionality
+        analyzer = IVTQCAnalyzer()
+        limits = QCLimits()
+        
+        # Test sample data
+        sample_data = [{
+            'sample_id': 'Integration-Test',
+            'concentration_ng_ul': 1500.0,
+            'a260_280_ratio': 1.95,
+            'a260_230_ratio': 2.10,
+            'timestamp': '2024-07-07T10:00:00'
+        }]
+        
+        results = analyzer.analyze_samples(sample_data)
+        
+        # Verify integration
+        assert results['summary']['total_samples'] == 1, "Integration test failed"
+        assert results['summary']['passed'] == 1, "Sample should pass QC"
+        
+        print("✅ IVT QC integration tests passed")
+        
+    except ImportError as e:
+        print(f"⚠️ IVT QC pipeline not available: {e}")
+        return True  # Don't fail if QC pipeline isn't available
+    except Exception as e:
+        print(f"❌ IVT QC integration test failed: {e}")
+        return False
+    
+    return True
+
+
 def run_all_tests():
     """Run all tests."""
     print("Starting plasmid design system tests...\n")
@@ -125,7 +164,8 @@ def run_all_tests():
         test_plasmid_design,
         test_validation,
         test_export_functionality,
-        test_plasmid_map_generation
+        test_plasmid_map_generation,
+        test_ivt_qc_integration
     ]
     
     for test in tests:

@@ -1,0 +1,127 @@
+{
+  "summary": {
+    "total_samples": 10,
+    "passed": 7,
+    "failed": 3,
+    "warnings": 0,
+    "analysis_timestamp": "2025-07-07T14:32:02.661121",
+    "success_rate": 70.0
+  },
+  "sample_results": [
+    {
+      "sample_id": "IVT-001",
+      "concentration_ng_ul": 1452.0,
+      "concentration_ug_ul": 1.452,
+      "a260_280_ratio": 1.91,
+      "a260_230_ratio": 2.0,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.660981"
+    },
+    {
+      "sample_id": "IVT-002",
+      "concentration_ng_ul": 895.0,
+      "concentration_ug_ul": 0.895,
+      "a260_280_ratio": 1.8,
+      "a260_230_ratio": 2.0,
+      "qc_status": "FAIL",
+      "qc_flags": [
+        "Low concentration: 0.895 \u00b5g/\u00b5L < 1.0 \u00b5g/\u00b5L"
+      ],
+      "timestamp": "2025-07-07T14:32:02.660999"
+    },
+    {
+      "sample_id": "IVT-003",
+      "concentration_ng_ul": 2347.0,
+      "concentration_ug_ul": 2.347,
+      "a260_280_ratio": 2.0,
+      "a260_230_ratio": 2.24,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661006"
+    },
+    {
+      "sample_id": "IVT-004",
+      "concentration_ng_ul": 673.0,
+      "concentration_ug_ul": 0.673,
+      "a260_280_ratio": 1.5,
+      "a260_230_ratio": 2.0,
+      "qc_status": "FAIL",
+      "qc_flags": [
+        "Low concentration: 0.673 \u00b5g/\u00b5L < 1.0 \u00b5g/\u00b5L",
+        "Low A260/A280 ratio: 1.50 < 1.8"
+      ],
+      "timestamp": "2025-07-07T14:32:02.661011"
+    },
+    {
+      "sample_id": "IVT-005",
+      "concentration_ng_ul": 1568.0,
+      "concentration_ug_ul": 1.568,
+      "a260_280_ratio": 1.82,
+      "a260_230_ratio": 2.0,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661016"
+    },
+    {
+      "sample_id": "IVT-006",
+      "concentration_ng_ul": 2984.0,
+      "concentration_ug_ul": 2.984,
+      "a260_280_ratio": 2.0,
+      "a260_230_ratio": 2.22,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661021"
+    },
+    {
+      "sample_id": "IVT-007",
+      "concentration_ng_ul": 789.0,
+      "concentration_ug_ul": 0.789,
+      "a260_280_ratio": 1.5,
+      "a260_230_ratio": 2.0,
+      "qc_status": "FAIL",
+      "qc_flags": [
+        "Low concentration: 0.789 \u00b5g/\u00b5L < 1.0 \u00b5g/\u00b5L",
+        "Low A260/A280 ratio: 1.50 < 1.8"
+      ],
+      "timestamp": "2025-07-07T14:32:02.661025"
+    },
+    {
+      "sample_id": "IVT-008",
+      "concentration_ng_ul": 1893.0,
+      "concentration_ug_ul": 1.893,
+      "a260_280_ratio": 2.0,
+      "a260_230_ratio": 2.22,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661029"
+    },
+    {
+      "sample_id": "IVT-009",
+      "concentration_ng_ul": 3456.0,
+      "concentration_ug_ul": 3.456,
+      "a260_280_ratio": 2.0,
+      "a260_230_ratio": 2.22,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661033"
+    },
+    {
+      "sample_id": "IVT-010",
+      "concentration_ng_ul": 1247.0,
+      "concentration_ug_ul": 1.247,
+      "a260_280_ratio": 1.82,
+      "a260_230_ratio": 2.0,
+      "qc_status": "PASS",
+      "qc_flags": [],
+      "timestamp": "2025-07-07T14:32:02.661037"
+    }
+  ],
+  "qc_limits": {
+    "min_concentration_ug_ul": 1.0,
+    "min_260_280_ratio": 1.8,
+    "max_260_280_ratio": 2.2,
+    "min_260_230_ratio": 1.8,
+    "max_260_230_ratio": 2.5
+  }
+}
